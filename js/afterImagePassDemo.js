@@ -4,8 +4,8 @@ function setupPostProcessing() {
   const renderPass = new THREE.RenderPass(scene, camera);
   composer.addPass(renderPass);
 
-  //add a AfterimagePass
-  const pass = new THREE.AfterimagePass(1);
+  //add a AfterimagePass, gives a motion bluer effect. good damp = 0.9 to 0.99
+  const pass = new THREE.AfterimagePass(0.97);
   composer.addPass(pass);
   pass.renderToScreen = true;
 
