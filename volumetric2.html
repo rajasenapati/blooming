@@ -1,0 +1,61 @@
+<!doctype html>
+<html class="no-js" lang="en">
+
+<head>
+  <meta charset="utf-8">
+  <title></title>
+  <meta name="description" content="">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+  <link rel="stylesheet" href="css/normalize.css">
+  <link rel="stylesheet" href="css/main.css">
+
+  <meta name="theme-color" content="#fafafa">
+</head>
+
+<body>
+<!--[if IE]>
+<p class="browserupgrade">You are using an <strong>outdated</strong> browser. Please <a href="https://browsehappy.com/">upgrade your browser</a> to improve your experience and security.</p>
+<![endif]-->
+
+<!-- The old version of three.js javascript works with volumetric lights refer: https://codepen.io/peterhry/pen/egzjGR?editors=0011 -->
+<script src="https://unpkg.com/three@0.83.0"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/dat-gui/0.5.1/dat.gui.min.js"></script>
+<script src="https://unpkg.com/three@0.83.0/examples/js/shaders/CopyShader.js"></script>
+<script src="https://unpkg.com/three@0.83.0/examples/js/postprocessing/EffectComposer.js"></script>
+<script src="https://unpkg.com/three@0.83.0/examples/js/postprocessing/RenderPass.js"></script>
+<script src="https://unpkg.com/three@0.83.0/examples/js/postprocessing/ShaderPass.js"></script>
+<script src="https://unpkg.com/three@0.83.0/examples/js/shaders/HorizontalBlurShader.js"></script>
+<script src="https://unpkg.com/three@0.83.0/examples/js/shaders/VerticalBlurShader.js"></script>
+<script src="https://unpkg.com/three@0.83.0/examples/js/shaders/FilmShader.js"></script>
+<script src="https://unpkg.com/three@0.83.0/examples/js/shaders/LuminosityHighPassShader.js"></script>
+<script src="https://unpkg.com/three@0.83.0/examples/js/postprocessing/UnrealBloomPass.js"></script>
+<script src="https://cdn.rawgit.com/felixturner/bad-tv-shader/master/BadTVShader.js"></script>
+
+<!-- including latest three.js removes the volumetric light -->
+<!--<script src="js/vendor/modernizr-3.8.0.min.js"></script>-->
+<!--<script src="js/vendor/three/three.js"></script>-->
+<!--<script src="js/vendor/three/ext/dat.gui.min.js"></script>-->
+<!--<script src="js/vendor/three/ext/OrbitControls.js"></script>-->
+<!--<script src="js/vendor/three/ext/postprocessing/EffectComposer.js"></script>-->
+<!--<script src="js/vendor/three/ext/postprocessing/RenderPass.js"></script>-->
+<!--<script src="js/vendor/three/ext/postprocessing/ShaderPass.js"></script>-->
+<!--<script src="js/vendor/three/ext/postprocessing/UnrealBloomPass.js"></script>-->
+
+<!--<script src="js/vendor/three/ext/shadersExt/AdditiveBlendingShader.js"></script>-->
+<!--<script src="js/vendor/three/ext/shadersExt/BadTVShader.js"></script>-->
+<!--<script src="js/vendor/three/ext/shaders/CopyShader.js"></script>-->
+<!--<script src="js/vendor/three/ext/shaders/FilmShader.js"></script>-->
+<!--<script src="js/vendor/three/ext/shaders/HorizontalBlurShader.js"></script>-->
+<!--<script src="js/vendor/three/ext/shaders/LuminosityHighPassShader.js"></script>-->
+<!--<script src="js/vendor/three/ext/shadersExt/PassThroughShader.js"></script>-->
+<!--<script src="js/vendor/three/ext/shaders/VerticalBlurShader.js"></script>-->
+<!--<script src="js/vendor/three/ext/shadersExt/VolumetericLightShader.js"></script>-->
+
+<script src="js/volumetric2.js"></script>
+
+</body>
+
+</html>
+
