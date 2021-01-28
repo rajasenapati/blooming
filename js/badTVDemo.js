@@ -1,28 +1,5 @@
 var scene, camera, renderer, cube, cube2,  ambient, composer;
 
-function setupPostProcessing() {
-  const renderPass = new THREE.RenderPass(scene, camera);
-  composer.addPass(renderPass);
-
-  //add an OPTIONAL film pass to add scanlines
-  const filmPass = new THREE.FilmPass(1, 0.3, 1024, false);
-  composer.addPass(filmPass);
-
-  //add a bloompass
-  const bloomPass = new THREE.UnrealBloomPass(window.innerWidth / window.innerHeight, 1.5, .8, .3);
-  composer.addPass(bloomPass);
-
-  //add badTVshader to add distortions
-  const badTVPass = new THREE.ShaderPass(THREE.BadTVShader);
-  badTVPass.uniforms.distortion.value = 1.9;
-  badTVPass.uniforms.distortion2.value = 1.2;
-  badTVPass.uniforms.speed.value = 0.1;
-  badTVPass.uniforms.rollSpeed.value = 0;
-  badTVPass.renderToScreen = true;
-  composer.addPass(badTVPass);
-}
-
-
 function createBasicGeometryAndLights() {
   const geometry = new THREE.BoxGeometry();
   let material = new THREE.MeshStandardMaterial({
@@ -66,8 +43,21 @@ var init = function() {
   renderer.setSize( window.innerWidth, window.innerHeight );
   composer.setSize( window.innerWidth, window.innerHeight );
 
-  //setup post processing
-  setupPostProcessing();
+  const renderPass = new THREE.RenderPass(scene, camera);
+  composer.addPass(renderPass);
+
+  //add an OPTIONAL film pass to add scanlines
+  const filmPass = new THREE.FilmPass(1, 0.3, 1024, false);
+  composer.addPass(filmPass);
+
+  //add badTVshader to add distortions
+  const badTVPass = new THREE.ShaderPass(THREE.BadTVShader);
+  badTVPass.uniforms.distortion.value = 1.9;
+  badTVPass.uniforms.distortion2.value = 1.2;
+  badTVPass.uniforms.speed.value = 0.1;
+  badTVPass.uniforms.rollSpeed.value = 0;
+  badTVPass.renderToScreen = true;
+  composer.addPass(badTVPass);
 
   document.body.appendChild( renderer.domElement );
   window.addEventListener( 'resize', onWindowResize, false);
