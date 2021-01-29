@@ -29,18 +29,18 @@ function createBasicGeometryAndLights() {
     side: THREE.DoubleSide,
     color: 0x7fc5f9,
     emissive: 0x25673d,
-    emissiveIntensity: 0.4,
+    emissiveIntensity: 1.4,
     metalness: 0.5, //0 for wood, 1 for metal. Default0.5
     roughness: 0.3 // 0 for smooth mirror reflection, 1 for fully defuse
   })
 
   let material2 = new THREE.MeshStandardMaterial({
     side: THREE.DoubleSide,
-    color: 0xff0000,
-    emissive: 0x25673d,
-    emissiveIntensity: 0.4,
-    metalness: 0.5, //0 for wood, 1 for metal. Default0.5
-    roughness: 0.3 // 0 for smooth mirror reflection, 1 for fully defuse
+    color: 0x00ff00,
+    emissive: 0x006700,
+    emissiveIntensity: 0.2, //more value, more bloom.
+    metalness: 1, //0 for wood, 1 for metal. Default0.5. more metalness, less bloom.
+    roughness: 1 // 0 for smooth mirror reflection, 1 for fully defuse
   })
 
   cube = new THREE.Mesh(geometry, material);
