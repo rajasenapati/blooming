@@ -18,11 +18,13 @@ function setupPostProcessing() {
 
   let scanlineEffect = new POSTPROCESSING.ScanlineEffect({
     blendFunction: POSTPROCESSING.BlendFunction.MULTIPLY,
-    density: 1.0
+    density: 2.0
   });
-  scanlineEffect.blendMode.opacity.value = 0.25;
+  scanlineEffect.blendMode.opacity.value = 0.025;
 
+  //TODO: play with effects here
   let effectPass = new POSTPROCESSING.EffectPass(camera,godraysEffect, scanlineEffect);
+  // let effectPass = new POSTPROCESSING.EffectPass(camera,godraysEffect);
   effectPass.renderToScreen = true;
   composer.addPass( effectPass );
 
@@ -35,7 +37,7 @@ function createBasicGeometryAndLights() {
   let material = new THREE.MeshStandardMaterial({
     side: THREE.DoubleSide,
     color: 0x7fc5f9,
-    emissive: 0x25673d,
+    emissive: 0x25067,
     emissiveIntensity: 0.4,
     metalness: 0.5, //0 for wood, 1 for metal. Default0.5
     roughness: 0.3 // 0 for smooth mirror reflection, 1 for fully defuse
@@ -103,7 +105,7 @@ var init = function() {
 var animate = function () {
   requestAnimationFrame( animate );
 
-  cube.rotation.y += 0.01;
+  cube.rotation.z += 0.01;
 
 
   // renderer.render( scene, camera );

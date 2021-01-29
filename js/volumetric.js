@@ -220,7 +220,7 @@ function setupScene() {
   const itemMaterial = new THREE.MeshBasicMaterial({transparent: true, opacity: 0.7});
 
   const img = new Image();
-  img.src = 'http://localhost:8090/blooming/img/wood.png';
+  img.src = 'img/wood.png';
   img.crossOrigin = 'Anonymous';
 
   img.onload = function() {
