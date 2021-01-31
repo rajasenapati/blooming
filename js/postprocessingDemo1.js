@@ -10,9 +10,9 @@ function setupPostProcessing() {
 
   let godraysEffect = new POSTPROCESSING.GodRaysEffect(camera, cube, {
     resolutionScale: 1,
-    density: 0.8,
+    density: 0.99, //more dense, more range of the god ray. try close to 1 to see the effect. >1 gives strange effect
     decay: 1,
-    weight: 0.9,
+    weight: 0.9, //more weight, more intense the ray is. try something like 2
     samples: 30
   });
 
@@ -20,7 +20,7 @@ function setupPostProcessing() {
     blendFunction: POSTPROCESSING.BlendFunction.MULTIPLY,
     density: 2.0
   });
-  scanlineEffect.blendMode.opacity.value = 0.025;
+  scanlineEffect.blendMode.opacity.value = 0.25;
 
   //TODO: play with effects here
   let effectPass = new POSTPROCESSING.EffectPass(camera,godraysEffect, scanlineEffect);
